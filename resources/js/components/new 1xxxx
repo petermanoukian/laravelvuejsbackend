@@ -1,0 +1,19 @@
+		<div class = 'row margintopbottom10'>
+			    <div class="col-12">
+					<h5 class="widget-title mb-10">Categories</h5>
+						<span>
+							<router-link :to="{ name: 'blog' }" class="class='marginright6'"> 
+								&rsaquo; All Blogs
+							</router-link>
+						</span>		
+						<span  v-for="cat, index in cats.data"> 
+							<router-link :to="{ name: 'blog', params: {   bycat:'bycat', catid: cat.id } }" class='marginright6'
+							:class=" [{bold: classCat(cat.id)},{red: classCat(cat.id)}]"> 
+								&rsaquo;  {{ cat.name }}  
+								( {{ cat.blogs_count}} )
+							</router-link> 
+						</span>
+
+                </div>
+			
+			</div>
